@@ -34,8 +34,8 @@ public class MouseEvent : MonoBehaviour
                 screenToWorldPointPositionA = Camera.main.ScreenToWorldPoint(position);
             //    // ワールド座標に変換されたマウス座標を代入
                 start = screenToWorldPointPositionA;
+            //マウスクリックでヒエラルキーにあるCubeを壊す(test)
             SME.Explode();
-
             }
 
             else if (Input.GetMouseButtonUp(0))
@@ -48,6 +48,7 @@ public class MouseEvent : MonoBehaviour
                 screenToWorldPointPositionB = Camera.main.ScreenToWorldPoint(position);
             //    // ワールド座標に変換されたマウス座標を代入
                 present = screenToWorldPointPositionB;
+            //マウス座標に苔を発生させる。ドラッグでその方向へ飛ぶ
             var direction = present - start;
             shake.shake(start,direction);
         }
