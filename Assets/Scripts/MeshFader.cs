@@ -6,16 +6,30 @@ using System.Collections;
 public class MeshFader : MonoBehaviour
 {
     private bool fadeOut = false;
+    private Rigidbody RB;
+    
 
-    void Update()
+    void Awake()
+    {
+        RB = GetComponent<Rigidbody>();
+
+    }
+        void Update()
     {
         if (fadeOut) return;
 
         // wait until rigibody is spleeping
-        if (GetComponent<Rigidbody>().IsSleeping())
+        if (this.gameObject.transform.localScale.x<=-5f)
         {
             fadeOut = true;
             StartCoroutine(FadeOut());
+        }
+
+        Vector3 aF = new Vector3(Time.time*100f, 0f, 0f);
+        RB.AddForce(aF, ForceMode.Force);
+        if (this.gameObject.transform.localScale.x>0f)
+        {
+            this.gameObject.transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
         }
     }
 
@@ -31,7 +45,9 @@ public class MeshFader : MonoBehaviour
         {
             rend.material.color = Color.Lerp(startColor, endColor, t / fadeTime);
             yield return null;
+
         }
-        Destroy(gameObject);
+       
+        Destroy(this.transform.root.gameObject);
     }
 }

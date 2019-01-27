@@ -13,7 +13,7 @@ public class shake_koke : MonoBehaviour
     void Start()
     {
         //par = Resources.Load("koke_particle") as GameObject;
-        par = Resources.Load("koke_particle_test") as GameObject;
+        par = Resources.Load("koke_particle") as GameObject;
         P_M = par.GetComponent<ParticleSystem>().main;
 
     }

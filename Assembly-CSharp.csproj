@@ -60,12 +60,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Explode\MeshFader.cs" />
-    <Compile Include="Assets\Scripts\Explode\SimpleMeshExploder.cs" />
-    <Compile Include="Assets\Scripts\koke_fall.cs" />
+    <Compile Include="Assets\Scripts\MeshFader.cs" />
+    <Compile Include="Assets\Scripts\MouseEvent.cs" />
     <Compile Include="Assets\Scripts\shake_koke.cs" />
-    <Compile Include="Assets\Scripts\test-Script\gra.cs" />
-    <Compile Include="Assets\Scripts\test-Script\MouseEvent.cs" />
+    <Compile Include="Assets\Scripts\SimpleMeshExploder.cs" />
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>C:/Users/sakura/Desktop/reversal_koke/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
